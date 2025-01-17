@@ -8,13 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ThrottleRequests
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
     public function handle($request, Closure $next)
     {
         $key = 'throttle_' . $request->ip();
